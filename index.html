@@ -1,47 +1,46 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مقارنة تنسيق 2024 و2025</title>
+    <title>حاسبة تنسيق الكليات 2025</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>مقارنة تنسيق 2024 و2025</h1>
-            <p>أدخل درجتك لمعرفة ترتيبك والكليات المتاحة</p>
+        <h1>حاسبة تنسيق الكليات 2025</h1>
+        <p>أدخل درجتك لمعرفة ترتيبك والكليات المتاحة لك</p>
+        
+        <div class="notes">
+            <h3>📌 ملاحظات مهمة:</h3>
+            <ul>
+                <li>يتم حساب النسبة المئوية من 320 درجة (2025) وتحويلها إلى درجة مكافئة من 410 (2024)</li>
+                <li>النتائج تقريبية بناءً على حدود تنسيق 2024 وقد تختلف في 2025</li>
+                <li>البيانات متاحة للدرجات من 250 إلى 320</li>
+            </ul>
         </div>
 
-        <div class="input-section">
-            <div class="input-group">
-                <label for="score">درجتك (250-320):</label>
-                <input type="number" id="score" min="250" max="320" step="0.5" placeholder="أدخل درجتك">
-            </div>
-            <div class="input-group">
-                <label for="section">الشعبة:</label>
-                <select id="section">
-                    <option value="">اختر الشعبة</option>
-                    <option value="علوم">علمي</option>
-                    <option value="أدبي">أدبي</option>
-                </select>
-            </div>
-            <button onclick="compareRanks()">احسب المقارنة</button>
-        </div>
+        <form id="calculator-form">
+            <label for="score">درجتك في الثانوية العامة 2025:</label>
+            <input type="number" id="score" min="0" max="320" required placeholder="أدخل درجتك (من 0 إلى 320)">
 
-        <div class="result-section" id="result"></div>
+            <label for="track">الشعبة:</label>
+            <select id="track" required>
+                <option value="" disabled selected>اختر الشعبة</option>
+                <option value="science">علمي علوم</option>
+                <option value="math">علمي رياضة</option>
+                <option value="literary">أدبي</option>
+            </select>
 
-        <div class="note">
-            <p>📌 يحسب النسبة من 320 ويحدد الكليات بناءً على حدود 2024. قد تختلف الحدود حسب التنسيق ودراجات كل محافظة.</p>
-            <p>📌 الدراجات المتاحة حاليا من 250 إلى 320 سيتم تحديث باقي الدراجات ورفعها.</p>
-        </div>
+            <button type="submit">🔍 احسب ترتيبي والكليات المتاحة</button>
+        </form>
 
-        <div class="footer">
-            <p>Made By: Yousef Elansari</p>
-        </div>
+        <div id="result" class="result"></div>
+
+        <footer>
+            <p>تم التطوير بواسطة: Yousef Elansari</p>
+        </footer>
     </div>
-    <script src="colleges2024.js"></script>
-    <script src="ranks2025.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

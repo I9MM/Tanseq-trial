@@ -116,6 +116,10 @@ button:hover {
     border-radius: 10px;
 }
 
+.faculty-group h4 {
+    margin-top: 0;
+}
+
 .footer {
     text-align: center;
     color: var(--text-dark);
